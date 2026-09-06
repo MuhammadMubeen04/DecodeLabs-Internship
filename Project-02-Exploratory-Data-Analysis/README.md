@@ -67,7 +67,7 @@ The goal was to move beyond raw tables and uncover the **story** hidden inside t
 │   ├── correlation_matrix.xlsx
 │   ├── outliers_totalprice.xlsx
 │   └── *.png charts
-├── Project_Report.docx           # Formal project report
+├── Project_Report.pdf            # Formal project report
 └── README.md                     # This file
 ```
 

@@ -1,28 +1,29 @@
-# SQL Data Analysis | DecodeLabs Internship
+# Data Visualization | DecodeLabs Internship
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-SQLite-003B57?logo=sqlite&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-11557c)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.13-4C72B0)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![Batch](https://img.shields.io/badge/Batch-2026-orange)
 
-**Industrial Training Kit – DecodeLabs | Data Analytics Internship**
+**Industrial Training Kit – DecodeLabs | Data Analytics Internship**  
+**Optional Mastery Phase: Data Visualization**
 
 ---
 
 ## Overview
 
-This repository contains the complete deliverables for **SQL Data Analysis**.
+This repository contains the complete deliverables for **Data Visualization**.
 
-The goal was to extract actionable business insights from the cleaned order dataset using structured SQL queries — filtering, grouping, aggregating, and sorting data with precision.
+The goal was to translate cleaned order data into clear, boardroom-ready visuals that communicate insights within seconds — focusing on data storytelling rather than decorative charts.
 
 **Focus Areas:**
-- Writing clean SELECT queries
-- Filtering with WHERE
-- Sorting with ORDER BY
-- Grouping with GROUP BY
-- Aggregations: COUNT, SUM, AVG
-- Using HAVING for post-aggregation filters
+- Choosing the right chart type for the business question
+- Maximizing data-ink ratio (minimal chartjunk)
+- Writing action titles that state the conclusion
+- Using color as a spotlight for the key insight
+- Direct labeling over legends
+- Answering the “So What?” for every visual
 
 ---
 
@@ -32,40 +33,43 @@ The goal was to extract actionable business insights from the cleaned order data
 |------------------|--------------------------------------------|
 | Source           | Cleaned dataset from previous milestones   |
 | Records          | 1,200 orders                               |
-| Database         | SQLite (`orders.db`)                       |
-| Table            | `orders`                                   |
+| Date Range       | Jan 2023 – Jun 2025                        |
 | Total Revenue    | $1,264,761.96                              |
+| Avg Order Value  | $1,053.97                                  |
 
 ---
 
-## Key SQL Queries Included
+## Charts Created
 
-| #  | Query Focus                                      | Clauses Used                  |
-|----|--------------------------------------------------|-------------------------------|
-| 1  | Basic SELECT (sample rows)                       | SELECT, LIMIT                 |
-| 2  | High-value orders                                | WHERE, ORDER BY               |
-| 3  | Cancelled orders                                 | WHERE, ORDER BY               |
-| 4  | Order volume by Product                          | GROUP BY, COUNT               |
-| 5  | Revenue metrics by Product                       | GROUP BY, COUNT, SUM, AVG     |
-| 6  | Order Status distribution                        | GROUP BY, COUNT               |
-| 7  | Revenue by Payment Method                        | GROUP BY, SUM, AVG            |
-| 8  | Referral Source performance                      | GROUP BY, SUM, AVG            |
-| 9  | Delivered revenue by Product                     | WHERE + GROUP BY              |
-| 10 | Products with Avg Order Value > 1000             | GROUP BY, HAVING              |
-| 11 | High-quantity cancelled orders                   | WHERE (multiple conditions)   |
-| 12 | Overall business summary                         | COUNT, SUM, AVG, CASE         |
+| #  | Chart Focus                                      | Insight Highlighted                          |
+|----|--------------------------------------------------|----------------------------------------------|
+| 1  | Revenue by Product (horizontal bar)              | Chair & Printer lead revenue                 |
+| 2  | Order Status distribution                        | Cancel + Return = 41% operational risk       |
+| 3  | Monthly Order Trend (line)                       | Stable volume across 30 months               |
+| 4  | Average Order Value by Product                   | Laptop highest AOV ($1,111)                  |
+| 5  | Referral Source revenue                          | Instagram top acquisition channel            |
+| 6  | Payment Method revenue                           | Online payments contribute largest share     |
+| 7  | Quantity vs Total Price (scatter)                | Positive quantity–value relationship         |
+| 8  | KPI Snapshot                                     | $1.26M revenue · 20.8% cancel rate           |
 
 ---
 
 ## Project Structure
 
 ```
-├── cleaned_dataset.xlsx       # Source data
-├── orders.db                  # SQLite database
-├── sql_analysis.py            # Script that runs all SQL queries
-├── sql_outputs/               # Query result tables (Excel)
-├── Project_Report_SQL.docx    # Formal project report
-└── README.md                  # This file
+├── cleaned_dataset.xlsx                 # Source data
+├── data_visualization.py                # Visualization script
+├── viz_outputs/                         # All PNG charts
+│   ├── 01_revenue_by_product.png
+│   ├── 02_order_status.png
+│   ├── 03_monthly_trend.png
+│   ├── 04_aov_by_product.png
+│   ├── 05_referral_revenue.png
+│   ├── 06_payment_revenue.png
+│   ├── 07_quantity_vs_price.png
+│   └── 08_kpi_snapshot.png
+├── Project_Report_Visualization.docx    # Formal project report
+└── README.md                            # This file
 ```
 
 ---
@@ -74,27 +78,38 @@ The goal was to extract actionable business insights from the cleaned order data
 
 ### Prerequisites
 ```bash
-pip install pandas openpyxl
+pip install pandas openpyxl matplotlib seaborn
 ```
 
 ### Execute
 ```bash
-python sql_analysis.py
+python data_visualization.py
 ```
 
 The script will:
-1. Connect to the SQLite database
-2. Execute 12 analytical SQL queries
-3. Print results to the console
-4. Export each result set as an Excel file in `sql_outputs/`
+1. Load the cleaned order dataset
+2. Generate 8 insight-driven charts
+3. Apply action titles and direct labeling
+4. Save all PNGs to the `viz_outputs/` folder
+
+---
+
+## Design Principles Applied
+
+- **Form follows function** — chart type matched to the analytical question
+- **Axis integrity** — zero baseline on all bar charts
+- **Data-ink ratio** — removed unnecessary grids, borders, and decoration
+- **Action titles** — titles state the conclusion, not just the topic
+- **Spotlight color** — single accent color highlights the key insight
+- **Direct labels** — values shown on bars to reduce cognitive load
 
 ---
 
 ## Tools Used
 
-- **SQLite** – lightweight relational database
-- **Python 3** + **Pandas** – query execution and result handling
-- **SQL** – SELECT, WHERE, ORDER BY, GROUP BY, HAVING, aggregations
+- **Python 3** + **Pandas** – data loading and aggregation
+- **Matplotlib** – core chart rendering
+- **Seaborn** – clean theme and styling
 
 ---
 
@@ -102,7 +117,7 @@ The script will:
 
 **Data Analyst Intern**  
 DecodeLabs | Batch 2026  
-Industrial Training Kit – SQL Data Analysis
+Industrial Training Kit – Data Visualization
 
 ---
 

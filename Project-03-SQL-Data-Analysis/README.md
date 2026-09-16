@@ -64,7 +64,7 @@ The goal was to extract actionable business insights from the cleaned order data
 ├── orders.db                  # SQLite database
 ├── sql_analysis.py            # Script that runs all SQL queries
 ├── sql_outputs/               # Query result tables (Excel)
-├── Project_Report_SQL.pdf    # Formal project report
+├── Project_Report_SQL.pdf     # Formal project report
 └── README.md                  # This file
 ```
 
